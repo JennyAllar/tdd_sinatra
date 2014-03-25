@@ -16,6 +16,7 @@ feature "Managing Items" do
     click_on ("Add New Item")
     expect(page).to have_content ("Fried Chicken")
     expect(page).to have_content ("Waffles")
-
+    click_on ("item1")
+    expect(page).to have_content ("Waffles")
   end
 end

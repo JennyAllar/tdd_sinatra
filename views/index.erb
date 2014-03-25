@@ -4,9 +4,8 @@
   <title>My Badass Food</title>
 </head>
 <body><a href="/new">add new item</a><br>
-<% ITEMS_ARRAY.each do |item| %>
-  <%= item %><br>
+<% ITEMS_ARRAY.each.with_index do |item, i| %>
+  <%= item %> - <a href="<%= i %>" id="item<%= i %>">Show item</a><br>
 <% end %>
-
 </body>
 </html>
