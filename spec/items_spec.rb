@@ -19,4 +19,11 @@ feature "Managing Items" do
     click_on ("item1")
     expect(page).to have_content ("Waffles")
   end
+
+  scenario "Unreachable pages result in 404" do
+    visit ('/poop')
+    expect(page).to have_content ("Keanu")
+    visit ('/9')
+    expect(page).to have_content ("Keanu")
+  end
 end

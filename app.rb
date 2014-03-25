@@ -19,6 +19,14 @@ class App < Sinatra::Base
   end
 
   get '/:id' do
-    ITEMS_ARRAY[params[:id].to_i]
+    if params[:id] == "0" || (params[:id].to_i < ITEMS_ARRAY.length && params[:id].to_i > 0)
+      ITEMS_ARRAY[params[:id].to_i]
+    else
+      redirect not_found
+    end
+  end
+
+  not_found do
+    erb :not_found_404
   end
 end
