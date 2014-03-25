@@ -1,7 +1,7 @@
 require 'sinatra/base'
 
 
-class App < Sinatra::Base
+class App < Sinatra::Application
   ITEMS_ARRAY = []
 
   get '/' do
