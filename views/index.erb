@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>My Badass Food</title>
-  </head>
-<body><a href = "/new">add new item</a></body>
+<head>
+  <title>My Badass Food</title>
+</head>
+<body><a href="/new">add new item</a><br>
+<% ITEMS_ARRAY.each do |item| %>
+  <%= item %><br>
+<% end %>
+
+</body>
 </html>

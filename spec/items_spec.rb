@@ -11,7 +11,11 @@ feature "Managing Items" do
     click_link ("add new item")
     fill_in "name", with: ("Fried Chicken")
     click_on ("Add New Item")
-    save_and_open_page
+    click_link ("add new item")
+    fill_in "name", with: ("Waffles")
+    click_on ("Add New Item")
     expect(page).to have_content ("Fried Chicken")
+    expect(page).to have_content ("Waffles")
+
   end
 end

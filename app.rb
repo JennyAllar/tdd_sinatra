@@ -1,6 +1,8 @@
 require 'sinatra/base'
 
+
 class App < Sinatra::Base
+  ITEMS_ARRAY = [] 
 
   get '/' do
     erb :index
@@ -12,8 +14,7 @@ class App < Sinatra::Base
 
   post '/' do
     name = params[:name]
-    name
+    ITEMS_ARRAY << name
+    redirect '/'
   end
-
-
 end
